@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marson Bakes — Boutique Cake Artisan Batam | Pre-Order Premium</title>
+<meta name="description" content="Marson Bakes Cake Batam — Chiffon cake, fruit yogurt, dan signature artisan cake. Pre-order via DM/WhatsApp. 4.2K+ followers.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --rose:#b8768a; --rose-soft:#d4a0ad; --cream:#faf3ec; --berry:#7a2e3a; --charcoal:#2d1f24; --gold:#c8a560;
+  --ff-serif:'Playfair Display',serif; --ff-sans:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{font-family:var(--ff-sans);color:var(--charcoal);background:var(--cream);overflow-x:hidden}
+img{max-width:100%;display:block}
+.container{max-width:1200px;margin:0 auto;padding:0 28px}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;padding:15px 32px;
+  border-radius:4px;font-weight:600;font-size:.95rem;text-decoration:none;
+  transition:all .3s;border:none;cursor:pointer;font-family:var(--ff-sans)
+}
+.btn-berry{background:var(--berry);color:#fff;box-shadow:0 6px 20px rgba(122,46,58,.3)}
+.btn-berry:hover{background:var(--rose);transform:translateY(-2px);box-shadow:0 10px 30px rgba(122,46,58,.4)}
+.btn-outline-rose{border:2px solid var(--rose);color:var(--berry);background:transparent}
+.btn-outline-rose:hover{background:var(--rose);color:#fff}
+.btn-outline-dark{border:2px solid var(--charcoal);color:var(--charcoal);background:transparent}
+.btn-outline-dark:hover{background:var(--charcoal);color:#fff}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0;transition:.3s;background:transparent}
+nav.scrolled{background:rgba(250,243,236,.95);backdrop-filter:blur(16px);box-shadow:0 2px 20px rgba(0,0,0,.05)}
+nav .container{display:flex;align-items:center;justify-content:space-between;padding-top:20px;padding-bottom:20px}
+.logo{
+  font-family:var(--ff-serif);font-size:1.5rem;font-weight:700;color:var(--berry);
+  text-decoration:none;display:flex;align-items:baseline;gap:4px
+}
+.logo em{font-style:italic;color:var(--rose);font-weight:400}
+.logo .sub{font-size:.6rem;letter-spacing:3px;color:var(--rose-soft);text-transform:uppercase;font-family:var(--ff-sans);font-weight:500;display:block;margin-top:2px}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{color:var(--charcoal);text-decoration:none;font-size:.85rem;font-weight:500;transition:.2s}
+.nav-links a:hover{color:var(--rose)}
+
+/* HERO */
+.hero{
+  min-height:90vh;display:flex;align-items:center;
+  padding:120px 0 80px;position:relative;overflow:hidden;
+  background:linear-gradient(165deg,var(--cream) 0%,#f8e8e0 60%,var(--rose-soft) 120%)
+}
+.hero::before{
+  content:'';position:absolute;top:20%;right:-10%;width:60%;height:100%;
+  background:radial-gradient(ellipse,rgba(184,118,138,.15) 0%,transparent 60%);
+  pointer-events:none
+}
+.hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;position:relative;z-index:1}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 16px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);
+  border-radius:50px;font-size:.78rem;font-weight:500;color:var(--berry);margin-bottom:20px;
+  border:1px solid var(--rose-soft)
+}
+.hero-tag::before{content:'';width:8px;height:8px;background:var(--rose);border-radius:50%}
+.hero h1{
+  font-family:var(--ff-serif);font-size:clamp(2.4rem,5vw,4.2rem);font-weight:700;
+  line-height:1.1;color:var(--berry);margin-bottom:16px
+}
+.hero h1 em{font-style:italic;color:var(--rose);font-weight:400}
+.hero .sub{
+  font-size:1rem;line-height:1.8;color:var(--charcoal);max-width:480px;margin-bottom:24px;font-weight:300;opacity:.8
+}
+.hero-meta{
+  display:flex;gap:24px;margin-bottom:24px;padding-bottom:24px;
+  border-bottom:1px solid var(--rose-soft)
+}
+.hero-meta .item .n{font-family:var(--ff-serif);font-size:1.6rem;font-weight:700;color:var(--berry);line-height:1}
+.hero-meta .item .l{font-size:.7rem;color:var(--rose);text-transform:uppercase;letter-spacing:1px;margin-top:2px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+
+.hero-visual{position:relative}
+.hero-visual .frame{
+  position:relative;width:100%;aspect-ratio:4/5;
+  background:#fff;padding:16px;box-shadow:0 24px 60px rgba(122,46,58,.15);
+  border-radius:8px
+}
+.hero-visual .frame .img-inner{width:100%;height:100%;overflow:hidden;border-radius:4px;position:relative}
+.hero-visual .frame img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.hero-visual .frame:hover img{transform:scale(1.05)}
+.hero-visual .badge{
+  position:absolute;top:-20px;left:-20px;width:120px;height:120px;
+  background:var(--berry);color:#fff;border-radius:50%;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  text-align:center;font-family:var(--ff-serif);font-size:.85rem;line-height:1.2;padding:8px;
+  box-shadow:0 8px 24px rgba(122,46,58,.3);transform:rotate(-8deg)
+}
+.hero-visual .badge .big{font-size:1.5rem;font-style:italic}
+.hero-visual .caption{
+  position:absolute;bottom:30px;left:30px;right:30px;
+  background:rgba(255,255,255,.95);padding:12px 16px;border-radius:4px;
+  font-family:var(--ff-serif);font-style:italic;font-size:.85rem;color:var(--berry)
+}
+
+/* SECTION */
+section{padding:100px 0;position:relative}
+.section-head{margin-bottom:60px;max-width:600px}
+.section-tag{
+  display:inline-block;padding:4px 0;margin-bottom:8px;
+  font-size:.7rem;font-weight:600;color:var(--rose);letter-spacing:3px;text-transform:uppercase
+}
+.section-title{
+  font-family:var(--ff-serif);font-size:clamp(2rem,4vw,3.5rem);font-weight:700;
+  line-height:1.1;color:var(--berry);margin-bottom:12px
+}
+.section-title em{font-style:italic;color:var(--rose);font-weight:400}
+.section-sub{color:var(--charcoal);opacity:.7;line-height:1.7;font-weight:300}
+
+/* PRODUCTS */
+.products{background:#fff}
+.products .head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:48px;flex-wrap:wrap;gap:20px}
+.prod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+.prod-card{
+  background:var(--cream);border-radius:8px;overflow:hidden;
+  transition:all .4s;position:relative;border:1px solid rgba(184,118,138,.15)
+}
+.prod-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(122,46,58,.1);border-color:var(--rose-soft)}
+.prod-card .img-wrap{height:240px;overflow:hidden;position:relative;background:#f0e0d0}
+.prod-card .img-wrap img{width:100%;height:100%;object-fit:cover;transition:.6s}
+.prod-card:hover .img-wrap img{transform:scale(1.08)}
+.prod-card .new-badge{
+  position:absolute;top:16px;left:16px;
+  padding:5px 12px;background:var(--berry);color:#fff;
+  font-size:.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;border-radius:4px
+}
+.prod-card .info{padding:24px}
+.prod-card h3{font-family:var(--ff-serif);font-size:1.2rem;color:var(--berry);margin-bottom:6px}
+.prod-card p{color:var(--charcoal);opacity:.7;font-size:.85rem;line-height:1.6;font-weight:300;margin-bottom:12px}
+.prod-card .meta-row{display:flex;justify-content:space-between;align-items:center;padding-top:12px;border-top:1px solid rgba(184,118,138,.2)}
+.prod-card .price{font-weight:600;color:var(--berry);font-size:.95rem}
+.prod-card .price small{font-size:.7rem;color:var(--rose);font-weight:400;display:block;letter-spacing:1px}
+.prod-card .flavor{font-size:.7rem;color:var(--rose);letter-spacing:1px;text-transform:uppercase}
+
+/* GALLERY */
+.gallery{background:var(--cream);padding:80px 0}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:40px}
+.gal-item{aspect-ratio:1;overflow:hidden;border-radius:8px;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.04);transition:.4s}
+.gal-item:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(122,46,58,.1)}
+.gal-item img{width:100%;height:100%;object-fit:cover}
+
+/* STORY */
+.story{background:linear-gradient(180deg,#fff 0%,var(--cream) 100%);padding:80px 0}
+.story-card{
+  max-width:760px;margin:0 auto;text-align:center;
+  padding:48px 32px;background:#fff;border-radius:8px;
+  border:1px solid var(--rose-soft);
+  box-shadow:0 8px 30px rgba(0,0,0,.04)
+}
+.story-card .stars{color:var(--gold);font-size:1.1rem;margin-bottom:16px}
+.story-card blockquote{font-family:var(--ff-serif);font-size:1.3rem;font-style:italic;line-height:1.6;color:var(--charcoal)}
+.story-card cite{display:block;margin-top:16px;font-size:.85rem;font-style:normal;color:var(--rose);font-weight:600;letter-spacing:1px}
+
+/* ORDER */
+.order{background:var(--berry);color:#fff;text-align:center;position:relative;overflow:hidden}
+.order::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:100%;
+  background:radial-gradient(ellipse at center,rgba(184,118,138,.3) 0%,transparent 60%);
+  pointer-events:none
+}
+.order .section-title{color:#fff}
+.order .section-title em{color:var(--rose-soft)}
+.order .section-tag{color:var(--rose-soft)}
+.order .section-sub{color:rgba(255,255,255,.8);max-width:540px;margin:0 auto 32px}
+.contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:600px;margin:0 auto 32px}
+.contact-card{
+  padding:24px 16px;background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.15);border-radius:8px;
+  transition:.3s;backdrop-filter:blur(8px)
+}
+.contact-card:hover{background:rgba(255,255,255,.12);transform:translateY(-4px)}
+.contact-card .icon{font-size:1.4rem;margin-bottom:6px;color:var(--rose-soft)}
+.contact-card .lbl{font-size:.65rem;text-transform:uppercase;letter-spacing:2px;opacity:.7;margin-bottom:4px}
+.contact-card .val{font-weight:600;font-size:.95rem}
+
+/* FOOTER */
+footer{background:#fff;padding:48px 0 24px;border-top:1px solid var(--rose-soft)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px}
+footer h4{font-family:var(--ff-serif);color:var(--berry);margin-bottom:12px;font-size:1rem}
+footer p,footer a{color:var(--charcoal);opacity:.7;font-size:.85rem;line-height:2;text-decoration:none}
+footer a:hover{opacity:1;color:var(--berry)}
+.footer-bot{margin-top:32px;padding-top:24px;border-top:1px solid var(--rose-soft);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.75rem;opacity:.5}
+
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;text-align:center;gap:40px}
+  .hero .sub{margin:0 auto 24px}
+  .hero-meta{justify-content:center}
+  .hero-actions{justify-content:center}
+  .products .head{text-align:center;justify-content:center;flex-direction:column;align-items:center}
+  .gal-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr;text-align:center}
+  .nav-links{display:none}
+  .hero-visual{max-width:400px;margin:0 auto}
+}
+@media(max-width:500px){
+  .prod-grid{grid-template-columns:1fr}
+  .hero-visual .badge{width:90px;height:90px;font-size:.7rem;top:-15px;left:-15px}
+  .hero-visual .badge .big{font-size:1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="container">
+    <a href="#" class="logo">Marson Bakes<em>Cake Atelier</em><span class="sub">Handcrafted in Batam</span></a>
+    <div class="nav-links">
+      <a href="#products">Koleksi</a>
+      <a href="#gallery">Galeri</a>
+      <a href="#order">Pre-Order</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div class="hero-tag">Handcrafted · Premium · Pre-Order</div>
+      <h1>Boutique Cake<br><em>Artisan</em> dari Batam</h1>
+      <p class="sub">Chiffon cake lembut, fruit yogurt cake yang sehat, dan signature artisan flavors. Setiap cake dibuat fresh dengan bahan premium — untuk momen spesial Anda.</p>
+      <div class="hero-meta">
+        <div class="item">
+          <div class="n">4.2K+</div>
+          <div class="l">Followers</div>
+        </div>
+        <div class="item">
+          <div class="n">4.0+</div>
+          <div class="l">Avg Rating</div>
+        </div>
+        <div class="item">
+          <div class="n">⭐</div>
+          <div class="l">Handmade</div>
+        </div>
+      </div>
+      <div class="hero-actions">
+        <a href="https://wa.me/6288291068733?text=Halo%20Marson%20Bakes!%20Saya%20tertarik%20dengan%20produk%20kalian" class="btn btn-berry" target="_blank">💬 Pre-Order Sekarang</a>
+        <a href="#products" class="btn btn-outline-rose">Lihat Koleksi</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="badge">Best<br><span class="big">Seller</span></div>
+      <div class="frame">
+        <div class="img-inner">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/716610682_18095029121466890_1496211975352942559_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4lSYa8VOGkYQ7kNvwE_be5D&_nc_oc=Adqz8wSoG62FU8ktmBog_MfSCDHg7xUgBwArUU_E7OExvMsNn-6zr_bypnVDI52eIrE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af9KRj7Vdz88HA2h0y-9MwrfouX-nmx9pEHCBYugyg1MbQ&oe=6A2B0534" alt="Marson Bakes signature" loading="lazy" />
+        </div>
+        <div class="caption">"Lemon Osmanthus · Vanilla · Mochi"</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="products" id="products">
+  <div class="container">
+    <div class="head">
+      <div>
+        <div class="section-tag">Koleksi</div>
+        <h2 class="section-title">Signature <em>Creations</em></h2>
+        <p class="section-sub">Setiap cake adalah karya — dibuat dengan cinta, rasa yang unik, dan presentasi yang memukau.</p>
+      </div>
+      <a href="https://wa.me/6288291068733?text=Halo%20Marson%20Bakes!%20Saya%20mau%20order" class="btn btn-outline-dark" target="_blank">💬 Pre-Order</a>
+    </div>
+    <div class="prod-grid">
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/716610682_18095029121466890_1496211975352942559_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4lSYa8VOGkYQ7kNvwE_be5D&_nc_oc=Adqz8wSoG62FU8ktmBog_MfSCDHg7xUgBwArUU_E7OExvMsNn-6zr_bypnVDI52eIrE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af9KRj7Vdz88HA2h0y-9MwrfouX-nmx9pEHCBYugyg1MbQ&oe=6A2B0534" alt="Lemon Osmanthus" loading="lazy" />
+          <span class="new-badge">NEW</span>
+        </div>
+        <div class="info">
+          <h3>Lemon Osmanthus Mochi</h3>
+          <p>Lemon cream yang bright dengan osmanthus floral notes, jelly mochi, dan black sesame. Kompleks tapi seimbang.</p>
+          <div class="meta-row">
+            <div class="price">Pre-Order<small>start from 250K</small></div>
+            <div class="flavor">Citrus · Floral</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/671805748_18089055857466890_5761842239710323114_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=3j2t6f1flPkQ7kNvwEhmw6D&_nc_oc=AdqISgL70YCY6ZNl5tfad4zJMzUNcaqLP5AV-TRCAGtmLUF4833rDFtOmIH2I-wCrGA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af8aGlmdN0oS91_kYaPrj5ZQLK06qo3f6ZNIk_x3CeumBw&oe=6A2AE103" alt="Pandan Durian" loading="lazy" />
+        </div>
+        <div class="info">
+          <h3>Pandan Durian Double Layer</h3>
+          <p>Perpaduan pandan wangi dengan durian asli yang creamy. Double layer dengan pastry cream lembut — bold & legit.</p>
+          <div class="meta-row">
+            <div class="price">Pre-Order<small>start from 280K</small></div>
+            <div class="flavor">Tropical · Bold</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711466539_18094325783466890_3674467598280850767_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=fFhDX3ID118Q7kNvwH1ovnG&_nc_oc=AdoektU4RYqAVZegDCiL7uUAB_9ofGAFCU5ZAs-tB1x8QDhuo28xcmHgX0KfP5pzUkA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af_H74A_y2c56vGCWUlYClv_xKJJ_S3f6886zAOkORlyEA&oe=6A2AE34C" alt="Mango Cheesecake" loading="lazy" />
+        </div>
+        <div class="info">
+          <h3>Cheesecake Mango Series</h3>
+          <p>Cheesecake creamy dengan topping mango segar. Manis-asam yang pas, cocok untuk dessert table atau gift.</p>
+          <div class="meta-row">
+            <div class="price">Pre-Order<small>start from 230K</small></div>
+            <div class="flavor">Creamy · Fruity</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/710288325_18094549952466890_1562787468331309458_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=101&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=wgHg1ZyR5wQQ7kNvwFloUR5&_nc_oc=AdroudPWiZypxTNx2x7cHliJdgP7oPT3Yy46JpOpTq7LYZH-5cWwlNrhX53p9LzBCOY&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af88LreGKYNa4xXrM-G8II5Mz_OCVJLU-_jrbFEyMxz9xQ&oe=6A2AECCF" alt="Wedding Cake" loading="lazy" />
+        </div>
+        <div class="info">
+          <h3>Wedding & Special Cake</h3>
+          <p>Custom wedding cake dan cake untuk acara spesial. Design sesuai tema, rasa bisa dipilih. Konsultasi dulu.</p>
+          <div class="meta-row">
+            <div class="price">Custom<small>by request</small></div>
+            <div class="flavor">Premium</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/669870551_18088934174466890_3377417544793698787_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=107&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=RvDp0I5X5rMQ7kNvwFpxzs0&_nc_oc=AdqaiOJOZY4kq7N3oU-kQIY9aYy6zazpt8Gq-oCzt8C7W2mbSuk1ydjphXY07XL_FlA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af819qiLhW1r671tajlfHgHOmEWTzPjXuUBTsaxOzxQmFQ&oe=6A2AFCE0" alt="Chiffon Cake" loading="lazy" />
+        </div>
+        <div class="info">
+          <h3>Chiffon Cake Series</h3>
+          <p>Chiffon cake lembut dengan berbagai varian rasa — vanilla classic, pandan, chocolate, dan seasonal flavors.</p>
+          <div class="meta-row">
+            <div class="price">Pre-Order<small>start from 120K</small></div>
+            <div class="flavor">Soft · Light</div>
+          </div>
+        </div>
+      </div>
+      <div class="prod-card">
+        <div class="img-wrap">
+          <img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/716610682_18095029121466890_1496211975352942559_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4lSYa8VOGkYQ7kNvwE_be5D&_nc_oc=Adqz8wSoG62FU8ktmBog_MfSCDHg7xUgBwArUU_E7OExvMsNn-6zr_bypnVDI52eIrE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af9KRj7Vdz88HA2h0y-9MwrfouX-nmx9pEHCBYugyg1MbQ&oe=6A2B0534" alt="Slice" loading="lazy" />
+        </div>
+        <div class="info">
+          <h3>Slice Cake</h3>
+          <p>Ingin coba tanpa pre-order? Cake slice tersedia di Balai Aboleng setiap Jumat. Limited, sampai abis!</p>
+          <div class="meta-row">
+            <div class="price">Walk-in<small>Friday only</small></div>
+            <div class="flavor">Ready Stock</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-head" style="margin:0 auto 0;text-align:center">
+      <div class="section-tag">Galeri</div>
+      <h2 class="section-title">Edisi <em>Terbaru</em></h2>
+      <p class="section-sub">Beberapa kreasi pilihan kami. Setiap cake adalah signature dengan rasa & cerita masing-masing.</p>
+    </div>
+    <div class="gal-grid">
+      <div class="gal-item"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/716610682_18095029121466890_1496211975352942559_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=4lSYa8VOGkYQ7kNvwE_be5D&_nc_oc=Adqz8wSoG62FU8ktmBog_MfSCDHg7xUgBwArUU_E7OExvMsNn-6zr_bypnVDI52eIrE&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af9KRj7Vdz88HA2h0y-9MwrfouX-nmx9pEHCBYugyg1MbQ&oe=6A2B0534" alt="" loading="lazy" /></div>
+      <div class="gal-item"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/711466539_18094325783466890_3674467598280850767_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=104&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=fFhDX3ID118Q7kNvwH1ovnG&_nc_oc=AdoektU4RYqAVZegDCiL7uUAB_9ofGAFCU5ZAs-tB1x8QDhuo28xcmHgX0KfP5pzUkA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af_H74A_y2c56vGCWUlYClv_xKJJ_S3f6886zAOkORlyEA&oe=6A2AE34C" alt="" loading="lazy" /></div>
+      <div class="gal-item"><img src="https://instagram.fbth9-1.fna.fbcdn.net/v/t51.82787-15/671805748_18089055857466890_5761842239710323114_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=110&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6IkZFRUQueHBpZHMuMTA4MC5zZHIucmVndWxhcl9waG90by5DMyJ9&_nc_ohc=3j2t6f1flPkQ7kNvwEhmw6D&_nc_oc=AdqISgL70YCY6ZNl5tfad4zJMzUNcaqLP5AV-TRCAGtmLUF4833rDFtOmIH2I-wCrGA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbth9-1.fna&_nc_gid=DihrKM9Sh6dc_S2Be1aqCg&_nc_ss=7a22e&oh=00_Af8aGlmdN0oS91_kYaPrj5ZQLK06qo3f6ZNIk_x3CeumBw&oe=6A2AE103" alt="" loading="lazy" /></div>
+    </div>
+  </div>
+</section>
+
+<section class="story">
+  <div class="container">
+    <div class="story-card">
+      <div class="stars">⭐⭐⭐⭐⭐</div>
+      <blockquote>"First time coba Marson Bakes — langsung jatuh cinta! Chiffon-nya super lembut, rasa pandan durian-nya bold dan unik. Packaging cantik, sampai dengan aman. Highly recommended untuk yang suka cake artisan berkualitas!"</blockquote>
+      <cite>— Pelanggan Setia Marson Bakes</cite>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="container">
+    <div class="section-tag">Pre-Order</div>
+    <h2 class="section-title">Siap <em>Pre-Order</em>?</h2>
+    <p class="section-sub">DM Instagram atau chat WhatsApp. Pre-order minimal H-3 untuk semua cake. Konsultasi rasa & design gratis! 💌</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="icon">📍</div>
+        <div class="lbl">Lokasi</div>
+        <div class="val">Orchid Park, Batam Centre</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📞</div>
+        <div class="lbl">WhatsApp</div>
+        <div class="val">0882-9106-8733</div>
+      </div>
+      <div class="contact-card">
+        <div class="icon">📸</div>
+        <div class="lbl">Instagram</div>
+        <div class="val">@marsonbakes</div>
+      </div>
+    </div>
+    <a href="https://wa.me/6288291068733?text=Halo%20Marson%20Bakes!%20Saya%20mau%20pre-order" class="btn btn-berry" target="_blank">💬 Pre-Order via WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>MARSON BAKES</h4>
+      <p>Boutique cake atelier di Batam. Handcrafted with love, premium ingredients, dan signature flavors yang memorable.</p>
+      <p style="margin-top:8px">✦ Available for slice cake di Balai Aboleng setiap Jumat.</p>
+    </div>
+    <div>
+      <h4>NAVIGASI</h4>
+      <a href="#products">Koleksi</a><br>
+      <a href="#gallery">Galeri</a><br>
+      <a href="#order">Pre-Order</a>
+    </div>
+    <div>
+      <h4>KONTAK</h4>
+      <a href="https://www.instagram.com/marsonbakes/" target="_blank">📸 @marsonbakes</a><br>
+      <a href="https://wa.me/6288291068733" target="_blank">💬 +62 882-9106-8733</a>
+    </div>
+  </div>
+  <div class="container footer-bot">
+    <span>&copy; 2026 Marson Bakes — Cake Atelier Batam</span>
+    <span>Website by BOSS Web</span>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>40)
+})
+</script>
+</body>
+</html>
